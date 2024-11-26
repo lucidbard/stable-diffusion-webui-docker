@@ -10,7 +10,7 @@
       "request": "launch",
       "program": "${file}",
       "cwd": "/stable-diffusion",
-      "args": ["--ckpt", "${workspaceFolder}/models/model.ckpt", "--gfpgan-dir", "${workspaceFolder}/models/", "--extra-models-cpu"],
+      "args": ["--ckpt", "${workspaceFolder}/models/model.ckpt", "--gfpgan-dir", "${workspaceFolder}/models/", "--extra-models-cpu", "--api"],
       "env": {
         "TRANSFORMERS_CACHE":"${workspaceFolder}/cache/transformers",
         "TORCH_HOME":"${workspaceFolder}/cache/torch"

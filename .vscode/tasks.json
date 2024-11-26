@@ -1,0 +1,37 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run docker-compose up",
+      "type": "docker-compose",
+      "dockerCompose": {
+        "up": {
+          "build": true,
+          "profiles": [
+            "auto"
+          ]
+        },
+        "files": [
+          "${workspaceFolder}/docker-compose.yml",
+          "${workspaceFolder}/docker-compose.override.yml"
+        ]
+      }
+    },
+    {
+      "label": "Open Stable Diffusion WebUI",
+      "command": "${input:openSimpleBrowser}",
+      "dependsOn": "Run docker-compose up",
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "openSimpleBrowser",
+      "type": "command",
+      "command": "vscode.env.open",
+      "args": ["http://localhost:7860/"]
+    }
+    ]
+}

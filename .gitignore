@@ -1,6 +1,11 @@
 /.devcontainer
 /docker-compose.override.yml
+/output
 
 # VSCode specific
 *.code-workspace
 /.vscode
+data/StableDiffusion/v1-5-pruned-emaonly.safetensors
+output/**/*
+data/StableDiffusion/*
+data/*
